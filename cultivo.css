@@ -1,0 +1,240 @@
+/* Estilo general de la página */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Hace que el tamaño de los elementos incluya padding y border */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+/* Sección Adn-Upc */
+.adn-upc-section-cultivo {
+  position: relative; /* Posicionamiento relativo para elementos hijos */
+  background-image: url("IMG/Mi\ Cultivo.png"); /* Imagen de fondo */
+  background-size: cover; /* Cubre todo el área disponible */
+  background-position: center; /* Centra la imagen de fondo */
+  height: 600px;
+  color: white; /* Color del texto */
+  display: flex; /* Flexbox para el contenido */
+  align-items: center; /* Alinea verticalmente el contenido */
+}
+
+.left-content {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espacio entre los elementos */
+  position: absolute; /* Elemento posicionado absolutamente */
+  left: 20px; /* Posición desde la izquierda */
+}
+
+.content-adn-cultivo {
+  display: flex;
+  flex-direction: column; /* Organiza elementos en columna */
+  align-items: flex-start; /* Alinea al inicio */
+  margin-left: 150px; /* Margen a la izquierda */
+}
+
+.content-adn-cultivo .logo img {
+  width: 400px; /* Ancho de la imagen */
+  height: 300px; /* Altura de la imagen */
+}
+
+.subtitle {
+  font-size: 1.5rem; /* Tamaño de fuente */
+  margin-top: 10px; /* Margen superior */
+}
+
+/*contenido superior*/
+.recomendaciones-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f9f9f9; /* Color de fondo de la sección */
+}
+
+.recomendaciones-text {
+  color: green;
+  font-size: 16px; /* Tamaño de texto para "Recomendaciones" */
+}
+
+.esta-semana-text {
+  color: green;
+  font-size: 24px; /* Tamaño de texto para "Esta Semana" */
+  margin: 0 20px; /* Espaciado a los lados */
+}
+
+.boton {
+  background-color: white;
+  border: 2px solid green; /* Bordes verdes */
+  color: green;
+  padding: 10px 20px; /* Espaciado interno del botón */
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px; /* Tamaño de texto del botón */
+}
+
+.imagen {
+  width: 50px; /* Ancho de las imágenes */
+  height: auto; /* Mantener la proporción */
+}
+
+/*contenido final*/
+
+.tareas-section {
+  display: flex; /* Usamos flexbox para alinear los elementos */
+  align-items: flex-start; /* Alineamos los elementos en la parte superior */
+  justify-content: space-between; /* Espaciamos los elementos */
+  padding: 20px; /* Agregamos un poco de padding */
+}
+
+.texto-grande {
+  text-align: left; /* Alineamos el texto a la izquierda */
+  margin-bottom: 10px; /* Espaciamos los textos */
+  max-width: 300px;
+  padding-left: 100px;
+}
+
+.planta {
+  width: 300px; /* Ancho de la imagen */
+  height: auto; /* Mantener proporción */
+  margin: 0 20px; /* Espaciado a los lados */
+}
+
+.tareas-texto {
+  text-align: left; /* Alineamos el texto a la izquierda */
+  font-weight: bold; /* Hacemos el texto más destacado */
+  margin-bottom: 10px; /* Espaciamos el texto "Tareas" de los botones */
+  padding-left: 20px; /* Desplazamos el texto "Tareas" 20px desde la izquierda */
+}
+
+.tareas-container {
+  margin-right: 20px; /* Espacio a la derecha del contenedor de tareas */
+  padding-left: 20px; /* Espacio a la izquierda del contenedor de tareas */
+}
+.boton {
+  display: block; /* Hacemos que cada botón sea un bloque */
+  background-color: white;
+  border: 2px solid green; /* Bordes verdes */
+  color: green;
+  padding: 10px 20px; /* Espaciado interno del botón */
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px; /* Tamaño de texto del botón */
+  margin: 5px 0; /* Espaciado entre botones */
+}
+
+/* Menu Horizontal*/
+.topheader {
+  background-color: white;
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos */
+  justify-content: space-between; /* Distribuye espacio entre los elementos */
+  padding: 0 20px;
+  height: 90px;
+}
+
+.menu-horizontal {
+  list-style: none; /* Elimina los puntos de la lista */
+  display: flex; /* Muestra los elementos en línea */
+  gap: 40px; /* Espacio entre los elementos del menú */
+  margin: 0;
+  flex: 1; /* Ocupa el espacio disponible */
+  justify-content: center; /* Centrar el menú horizontal */
+}
+
+.menu-horizontal li a {
+  font-weight: bold; /* Negrita para los enlaces */
+  color: black; /* Color del texto */
+  text-decoration: none; /* Elimina el subrayado */
+  font-size: 1.1rem; /* Tamaño de fuente */
+}
+
+.menu-horizontal li a:hover {
+  color: green; /* Color al pasar el mouse */
+}
+
+/* Estilo del botón */
+.btn-form-insc {
+  background-color: #4caf50; /* Color de fondo del botón */
+  color: white; /* Color del texto */
+  font-weight: bold; /* Negrita para el texto */
+  padding: 10px 20px; /* Espaciado interno */
+  border: none; /* Sin borde */
+  border-radius: 20px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  margin-left: 10px; /* Margen a la izquierda */
+}
+
+.btn-form-insc:hover {
+  background-color: #45a049; /* Color de fondo al pasar el mouse */
+}
+
+/* Iconos */
+.lupa-icon,
+.opciones-icon {
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  margin: 0 50px; /* Margen lateral */
+}
+/* Menú vertical */
+nav {
+  position: relative; /* Asegura que el menú se posicione relativo a la barra de navegación */
+}
+
+.vertical-menu {
+  display: none; /* Ocultar el menú por defecto */
+  position: absolute; /* Posicionamiento absoluto */
+  top: 70px; /* Ajusta según sea necesario */
+  right: 0; /* Posiciona a la derecha */
+  background-color: white; /* Fondo del menú */
+  border: 1px solid #ccc; /* Borde del menú */
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.vertical-menu ul {
+  list-style: none; /* Elimina los puntos de la lista */
+  padding: 0; /* Elimina el padding */
+  margin: 0; /* Elimina el margin */
+}
+
+.vertical-menu li {
+  padding: 10px 15px; /* Espaciado interno */
+}
+
+.vertical-menu li a {
+  text-decoration: none; /* Elimina el subrayado */
+  color: #333; /* Color del texto */
+  display: block; /* Hace que el área del enlace sea más grande */
+}
+
+.vertical-menu li a:hover {
+  background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilo de las divisiones */
+.divider {
+  height: 1px; /* Altura de la línea */
+  background-color: green; /* Color de la línea */
+  margin: 0; /* Sin margen */
+}
+
+/* Botón para ingresar */
+.btn-form-insc {
+  margin-left: auto; /* Para alinear a la derecha */
+}
+
+/* Estilo para la imagen de opciones */
+.opciones-icon {
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+}
+
+/* Muestra el menú al hacer clic en la imagen de opciones (ejemplo) */
+.opciones-icon:hover + .vertical-menu {
+  display: block; /* Muestra el menú al pasar el mouse */
+}
