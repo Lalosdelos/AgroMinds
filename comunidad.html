@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AgroMinds Landing Page</title>
+    <link href="comunidad.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <!--Menu horizontal-->
+    <div id="navbar-container"></div>
+        <section class="adn-upc-section-comunidad">
+      <div class="content-adn-comunidad">
+        <a href="#" class="logo">
+          <img
+            height="60"
+            width="60"
+            src="IMG/Comunidad.png"
+            alt="AgroMinds Titulo"
+          />
+        </a>
+        <p class="subtitle">
+          Conéctate con otros agricultores, comparte experiencias y aprende de
+          la comunidad.
+        </p>
+      </div>
+    </section>
+    <section id="search-section" class="search-section">
+      <hr class="section-line" />
+      <div class="section-header">
+        <input
+          type="text"
+          placeholder="Buscar por tema..."
+          class="search-bar"
+        />
+      </div>
+    </section>
+    <section class="button-text-section">
+      <div class="button-text-container">
+        <div class="button-text-item">
+          <button class="custom-button">FORO</button>
+          <p>
+            Participa en debates y comparte tus experiencias con otros
+            agricultores. Haz clic aquí para crear nuevos temas o unirte a
+            conversaciones sobre técnicas de cultivo, maquinaria, y más.
+          </p>
+        </div>
+        <div class="button-text-item">
+          <button class="custom-button">Q&A</button>
+          <p>
+            ¿Tienes una duda? Pregunta a la comunidad y obtén respuestas rápidas
+            y prácticas. Haz clic aquí para plantear tus preguntas o ayudar a
+            otros con tu conocimiento.
+          </p>
+        </div>
+        <div class="button-text-item">
+          <button class="custom-button">EXPERTOS</button>
+          <p>
+            Accede a consejos de profesionales y expertos en agricultura. Haz
+            clic aquí para consultar recomendaciones especializadas que te
+            ayudarán a mejorar tu rendimiento y enfrentar desafíos.
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script>
+    // Load the navigation bar
+    fetch("menu.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("navbar-container").innerHTML = data;
+        // Add event listeners for the menu toggle after loading
+        const menuToggle = document.getElementById("menuToggle");
+        const verticalMenu = document.getElementById("verticalMenu");
+
+        menuToggle.addEventListener("click", () => {
+          verticalMenu.style.display =
+            verticalMenu.style.display === "block" ? "none" : "block";
+        });
+      })
+      .catch((error) => console.error("Error loading navbar:", error));
+  </script>
+</html>
