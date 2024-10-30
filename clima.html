@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AgroMinds Landing Page</title>
+    <link href="clima.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <!--Menu-->
+    <div id="navbar-container"></div>
+    <section class="adn-upc-section-clima">
+      <div class="content-adn-clima">
+        <a href="#" class="logo">
+          <img
+            height="60"
+            width="60"
+            src="IMG/ClimaSuelo.png"
+            alt="AgroMinds Titulo"
+          />
+        </a>
+        <p class="subtitle">
+          Revisa el clima en tiempo real y recibe recomendaciones adaptadas a las condiciones actuales.
+        </p>
+      </div>
+    </section>
+    <section class="contenedor">
+      <div class="section-inline">
+        <div class="left-group">
+          <img src="IMG/señal.png" alt="Imagen1" />
+          <span class="text-green-large">Huaraz, Perú</span>
+        </div>
+        <span class="text-bold-underline">Cambiar ubicación aquí</span>
+        <div class="right-group">
+          <span class="text-green-large">Filtros</span>
+          <img src="IMG/filtro.png" alt="Imagen2" />
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <img src="IMG/mapa.png" alt="Mapa" class="mapa" />
+      <section class="clima-section">
+        <div class="clima-row">
+          <img src="IMG/clima.png" alt="Clima" class="clima" />
+          <div class="temperatura" style="color: green">14° C</div>
+        </div>
+        <div class="info-row">
+          <div class="info-item">
+            <div class="info-value">73%</div>
+            <div class="info-label">Precipitación</div>
+          </div>
+          <div class="info-item">
+            <div class="info-value">64%</div>
+            <div class="info-label">Agua</div>
+          </div>
+          <div class="info-item">
+            <div class="info-value">80%</div>
+            <div class="info-label">Tierra</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script>
+    // Load the navigation bar
+    fetch("menu.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("navbar-container").innerHTML = data;
+        // Add event listeners for the menu toggle after loading
+        const menuToggle = document.getElementById("menuToggle");
+        const verticalMenu = document.getElementById("verticalMenu");
+
+        menuToggle.addEventListener("click", () => {
+          verticalMenu.style.display =
+            verticalMenu.style.display === "block" ? "none" : "block";
+        });
+      })
+      .catch((error) => console.error("Error loading navbar:", error));
+  </script>
+</html>
