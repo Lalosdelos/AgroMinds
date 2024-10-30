@@ -1,0 +1,329 @@
+/* Estilo general de la página */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Hace que el tamaño de los elementos incluya padding y border */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+/* Sección Adn-Upc */
+.adn-upc-section {
+  position: relative; /* Posicionamiento relativo para elementos hijos */
+  background-image: url("IMG/fondo1.png"); /* Imagen de fondo */
+  background-size: cover; /* Cubre todo el área disponible */
+  background-position: center; /* Centra la imagen de fondo */
+  height: 600px;
+  color: white; /* Color del texto */
+  display: flex; /* Flexbox para el contenido */
+  align-items: center; /* Alinea verticalmente el contenido */
+}
+
+.left-content {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espacio entre los elementos */
+  position: absolute; /* Elemento posicionado absolutamente */
+  left: 20px; /* Posición desde la izquierda */
+}
+
+.content-adn {
+  display: flex;
+  flex-direction: column; /* Organiza elementos en columna */
+  align-items: flex-start; /* Alinea al inicio */
+  margin-left: 150px; /* Margen a la izquierda */
+}
+
+.content-adn .logo img {
+  width: 400px; /* Ancho de la imagen */
+  height: 300px; /* Altura de la imagen */
+}
+
+.subtitle {
+  font-size: 1.5rem; /* Tamaño de fuente */
+  margin-top: 10px; /* Margen superior */
+}
+
+/* Flechas de navegación */
+.arrow-left {
+  position: absolute; /* Posicionamiento absoluto */
+  top: 50%; /* Centra verticalmente */
+  transform: translateY(-50%); /* Ajusta el centrado */
+  left: 20px; /* Posición desde la izquierda */
+}
+
+.arrow-right {
+  position: absolute; /* Posicionamiento absoluto */
+  top: 50%; /* Centra verticalmente */
+  transform: translateY(-50%); /* Ajusta el centrado */
+  right: 20px; /* Posición desde la derecha */
+}
+
+.arrow-icon {
+  width: 120px; /* Ancho del icono */
+  height: 120px; /* Altura del icono */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  object-fit: contain; /* Asegura que la imagen se ajuste */
+}
+
+/* Sección de servicios */
+.services-section h2,
+.news-section h2 {
+  color: #4caf50; /* Color del texto */
+  font-size: 2rem; /* Tamaño de fuente */
+  margin-bottom: 0; /* Sin margen inferior */
+  margin-left: 200px; /* Margen a la izquierda */
+  text-align: left; /* Alineación a la izquierda */
+}
+
+.section-line {
+  width: 80px; /* Ancho de la línea */
+  height: 3px; /* Altura de la línea */
+  background-color: #4caf50; /* Color de la línea */
+  margin: 10px auto 20px; /* Margen automático para centrar */
+}
+
+/* Estilo de los contenedores de servicios */
+.services-container {
+  display: flex; /* Flexbox para el contenido */
+  justify-content: space-around; /* Espaciado entre elementos */
+  gap: 20px; /* Espacio entre los elementos */
+  padding: 0 40px; /* Padding lateral */
+}
+
+.service-card {
+  background-color: white; /* Color de fondo de la tarjeta */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  width: 300px; /* Ancho de la tarjeta */
+  padding: 20px; /* Espaciado interno */
+  text-align: center; /* Centra el texto */
+}
+
+.service-card img {
+  width: 100%; /* Ancho completo */
+  height: 180px; /* Altura de la imagen */
+  object-fit: cover; /* Ajusta la imagen para cubrir */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.service-card h3 {
+  color: black; /* Color del texto */
+  font-size: 1.2rem; /* Tamaño de fuente */
+  margin: 10px 0; /* Margen superior e inferior */
+  font-weight: bold; /* Negrita para el texto */
+}
+
+.service-card p {
+  color: #666; /* Color del texto */
+  font-size: 0.9rem; /* Tamaño de fuente */
+  margin-top: 10px; /* Margen superior */
+}
+
+/* Sección de noticias */
+.news-section {
+  padding: 50px 20px; /* Padding superior e inferior */
+  background-color: #fff; /* Color de fondo */
+  display: flex;
+  flex-direction: column; /* Organiza en columna */
+  align-items: center; /* Centra horizontalmente */
+}
+
+.news-section h2 {
+  color: #4caf50; /* Color del texto */
+  font-size: 2rem; /* Tamaño de fuente */
+  margin-bottom: 20px; /* Margen inferior */
+  margin-left: 400px; /* Margen a la izquierda */
+  text-align: left; /* Alineación a la izquierda */
+  width: 100%; /* Ancho completo */
+}
+
+.news-container {
+  display: flex;
+  flex-direction: column; /* Organiza en columna */
+  gap: 20px; /* Espacio entre los elementos */
+  width: 100%; /* Ancho completo */
+  max-width: 1000px; /* Ancho máximo */
+}
+
+.news-card {
+  background-color: white; /* Color de fondo de la tarjeta */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  padding: 20px; /* Espaciado interno */
+  display: flex; /* Flexbox para el contenido */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten */
+  gap: 20px; /* Espacio entre los elementos */
+  align-items: center; /* Centra verticalmente */
+  margin-bottom: 20px; /* Margen inferior */
+  margin-left: 300px; /* Margen a la izquierda */
+  position: relative; /* Posiciona relativo */
+}
+
+.news-card img {
+  width: 250px; /* Ancho de la imagen */
+  height: 200px; /* Altura de la imagen */
+  border-radius: 10px; /* Bordes redondeados */
+  object-fit: cover; /* Ajusta la imagen para cubrir */
+  position: absolute; /* Posicionamiento absoluto */
+  left: -400px; /* Posición desde la izquierda */
+  top: 20px; /* Posición desde la parte superior */
+  z-index: 1; /* Asegura que esté por encima de otros elementos */
+}
+
+.news-text {
+  flex: 1; /* Ocupa el espacio restante */
+  padding-left: 140px; /* Padding a la izquierda */
+}
+
+.news-card .news-date {
+  font-size: 0.9rem; /* Tamaño de fuente */
+  color: #777; /* Color del texto */
+  margin-top: 10px; /* Margen superior */
+  text-align: right; /* Alineación a la derecha */
+}
+
+/* Botón "Ver más" */
+.btn-view-more {
+  background-color: #4caf50; /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 10px 30px; /* Espaciado interno */
+  font-size: 1rem; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita para el texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  margin-top: 20px; /* Margen superior */
+}
+
+.btn-view-more:hover {
+  background-color: #45a049; /* Color de fondo al pasar el mouse */
+}
+
+/* Sección de pie de pagina */
+.contact-section {
+  padding: 40px; /* Padding interno */
+  background-color: #f9f9f9; /* Color de fondo */
+  text-align: center; /* Centra el texto */
+}
+
+.contact-section h2 {
+  color: #333; /* Color del texto */
+  font-size: 1.5rem; /* Tamaño de fuente */
+  margin-bottom: 10px; /* Margen inferior */
+}
+
+/* Menu Horizontal*/
+.topheader {
+  background-color: white;
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos */
+  justify-content: space-between; /* Distribuye espacio entre los elementos */
+  padding: 0 20px;
+  height: 90px;
+}
+
+.menu-horizontal {
+  list-style: none; /* Elimina los puntos de la lista */
+  display: flex; /* Muestra los elementos en línea */
+  gap: 40px; /* Espacio entre los elementos del menú */
+  margin: 0;
+  flex: 1; /* Ocupa el espacio disponible */
+  justify-content: center; /* Centrar el menú horizontal */
+}
+
+.menu-horizontal li a {
+  font-weight: bold; /* Negrita para los enlaces */
+  color: black; /* Color del texto */
+  text-decoration: none; /* Elimina el subrayado */
+  font-size: 1.1rem; /* Tamaño de fuente */
+}
+
+.menu-horizontal li a:hover {
+  color: green; /* Color al pasar el mouse */
+}
+
+/* Estilo del botón */
+.btn-form-insc {
+  background-color: #4caf50; /* Color de fondo del botón */
+  color: white; /* Color del texto */
+  font-weight: bold; /* Negrita para el texto */
+  padding: 10px 20px; /* Espaciado interno */
+  border: none; /* Sin borde */
+  border-radius: 20px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  margin-left: 10px; /* Margen a la izquierda */
+}
+
+.btn-form-insc:hover {
+  background-color: #45a049; /* Color de fondo al pasar el mouse */
+}
+
+/* Iconos */
+.lupa-icon,
+.opciones-icon {
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  margin: 0 50px; /* Margen lateral */
+}
+/* Menú vertical */
+nav {
+  position: relative; /* Asegura que el menú se posicione relativo a la barra de navegación */
+}
+
+.vertical-menu {
+  display: none; /* Ocultar el menú por defecto */
+  position: absolute; /* Posicionamiento absoluto */
+  top: 70px; /* Ajusta según sea necesario */
+  right: 0; /* Posiciona a la derecha */
+  background-color: white; /* Fondo del menú */
+  border: 1px solid #ccc; /* Borde del menú */
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.vertical-menu ul {
+  list-style: none; /* Elimina los puntos de la lista */
+  padding: 0; /* Elimina el padding */
+  margin: 0; /* Elimina el margin */
+}
+
+.vertical-menu li {
+  padding: 10px 15px; /* Espaciado interno */
+}
+
+.vertical-menu li a {
+  text-decoration: none; /* Elimina el subrayado */
+  color: #333; /* Color del texto */
+  display: block; /* Hace que el área del enlace sea más grande */
+}
+
+.vertical-menu li a:hover {
+  background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilo de las divisiones */
+.divider {
+  height: 1px; /* Altura de la línea */
+  background-color: green; /* Color de la línea */
+  margin: 0; /* Sin margen */
+}
+
+/* Botón para ingresar */
+.btn-form-insc {
+  margin-left: auto; /* Para alinear a la derecha */
+}
+
+/* Estilo para la imagen de opciones */
+.opciones-icon {
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+}
+
+/* Muestra el menú al hacer clic en la imagen de opciones (ejemplo) */
+.opciones-icon:hover + .vertical-menu {
+  display: block; /* Muestra el menú al pasar el mouse */
+}

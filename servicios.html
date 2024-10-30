@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AgroMinds Landing Page</title>
+    <link href="servicios.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <!--Menu horizontal-->
+    <div id="navbar-container"></div>
+    <section class="adn-upc-section-servicios">
+      <div class="left-content">
+        <div class="arrow-left">
+          <img
+            src="IMG/flechaizquierda.png"
+            alt="Left Arrow"
+            class="arrow-icon"
+          />
+        </div>
+        <div class="content-adn-servicios">
+          <a href="#" class="logo">
+            <img
+              height="60"
+              width="60"
+              src="IMG/tituloagro.png"
+              alt="AgroMinds Titulo"
+            />
+          </a>
+          <p class="subtitle">
+            ¡Maneja tus cultivos de forma más eficiente con nosotros!
+          </p>
+        </div>
+      </div>
+      <div class="arrow-right">
+        <img src="IMG/felchaderecha.png" alt="Right Arrow" class="arrow-icon" />
+      </div>
+    </section>
+    <!-- Sección Servicios -->
+    <section id="services" class="services-section">
+      <h2>NUESTROS SERVICIOS</h2>
+      <hr class="section-line" />
+      <div class="services-container">
+        <div class="service-card">
+          <img src="IMG/imagen1.png" alt="Guía de cultivo" />
+          <h3>Guía de cultivo</h3>
+          <p>
+            Explora recomendaciones personalizadas para tus cultivos. Haz clic
+            aquí para acceder a guías detalladas sobre las mejores prácticas de
+            siembra, cuidado y cosecha, optimizadas según tu tipo de suelo y
+            clima.
+          </p>
+        </div>
+        <div class="service-card">
+          <img src="IMG/imagen2.png" alt="Guía de recursos" />
+          <h3>Guía de recursos</h3>
+          <p>
+            Encuentra los recursos esenciales para maximizar tu productividad.
+            Haz clic aquí para acceder a herramientas, insumos y consejos útiles
+            adaptados a las necesidades de tu cultivo y región.
+          </p>
+        </div>
+        <div class="service-card">
+          <img src="IMG/imagen3.png" alt="Consejos" />
+          <h3>Consejos</h3>
+          <p>
+            Descubre tips y recomendaciones para mejorar tu rendimiento
+            agrícola. Haz clic aquí para obtener consejos prácticos sobre el
+            cuidado de tus cultivos y la gestión eficiente de tus recursos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Noticias -->
+    <section id="news" class="news-section">
+      <h2>NOTICIAS</h2>
+      <hr class="section-line" />
+      <div class="news-container">
+        <div class="news-card news-row">
+          <img src="IMG/noticia1.png" alt="Noticia 1" />
+          <p>
+            En la reunión se abordó la solicitud de verificación de la
+            construcción de canales en estos sectores. Junto con la Oficina de
+            Planificación Agraria de la GRA y en colaboración con la Junta de
+            Usuarios de Chancay Lambayeque, se determinaron las necesidades
+            prioritarias. Además, se alcanzaron acuerdos donde la Gerencia de
+            Agricultura brindará el apoyo necesario a los pobladores para
+            avanzar con los proyectos mencionados.
+          </p>
+          <p class="news-date">Gobierno del Perú, 20 de agosto 2024</p>
+        </div>
+        <div class="news-card news-row">
+          <p>
+            En un esfuerzo conjunto, el Gobierno Regional de Lambayeque a través
+            de la Gerencia Regional de Agricultura y la comunidad de Cañaris,
+            articulan acciones orientadas a la preservación y el desarrollo
+            sostenible ambiental, con la forestación y gestión del recurso
+            hídrico. Se enfatizó que en el aspecto ambiental, la actividad
+            contribuirá a evitar el deterioro de los suelos, proteger el
+            deslizamiento de tierra, mejorar la captura de CO2 y servirá de
+            cortina rompeviento y captura de partículas de polvo.
+          </p>
+          <img src="IMG/noticia2.png" alt="Noticia 2" />
+          <p class="news-date">Gobierno del Perú, 20 de septiembre 2024</p>
+        </div>
+        <div class="news-card news-row">
+          <img src="IMG/noticia3.png" alt="Noticia 3" />
+          <p>
+            Los incendios forestales han generado grave afectación en 22
+            regiones del país, no solo en zonas de bosques sino también de
+            cultivos. Además ya se registran 16 personas muertas debido a estos
+            siniestros. Así lo indicó el presidente de la Asociación de Gremios
+            Productores Agrarios del Perú (AGAP), Gabriel Amaro Alzamora, quien
+            dijo que estos incendios, que se producen todos los años, se
+            originan principalmente por la realización de malas prácticas como
+            la quema de residuos agrícolas o restos vegetales para originar
+            lluvias.
+          </p>
+          <p class="news-date">
+            Agencia Agraria de noticias, 20 de septiembre 2024
+          </p>
+        </div>
+      </div>
+      <button class="btn-view-more">Ver más noticias</button>
+    </section>
+
+    <!-- Necesitas aiuda -->
+    <section id="contact" class="contact-section">
+      <h2>¿Necesitas ayuda?</h2>
+      <p>Contáctanos.</p>
+    </section>
+    <script>
+      // Load the navigation bar
+      fetch("menu.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar-container").innerHTML = data;
+          // Add event listeners for the menu toggle after loading
+          const menuToggle = document.getElementById("menuToggle");
+          const verticalMenu = document.getElementById("verticalMenu");
+
+          menuToggle.addEventListener("click", () => {
+            verticalMenu.style.display =
+              verticalMenu.style.display === "block" ? "none" : "block";
+          });
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
+    </script>
+  </body>
+</html>
