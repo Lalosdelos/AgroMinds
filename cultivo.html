@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AgroMinds Landing Page</title>
+    <link href="cultivo.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <!--Menu-->
+    <div id="navbar-container"></div>
+    <!--Imagen Grande-->
+    <section class="adn-upc-section-cultivo">
+      <div class="content-adn-cultivo">
+        <a href="#" class="logo">
+          <img
+            height="60"
+            width="150"
+            src="IMG/micultivotitulo.png"
+            alt="AgroMinds Titulo"
+          />
+        </a>
+        <p class="subtitle">
+          Revisa todas tus tareas relacionadas con la agricultura, incluiyendo
+          instrucciones y recomendaciones.
+        </p>
+      </div>
+    </section>
+    <section class="recomendaciones-section">
+      <span class="recomendaciones-text">Recomendaciones</span>
+      <img src="IMG/flechita.png" alt="Imagen 1" class="imagen" />
+      <span class="esta-semana-text">Esta Semana</span>
+      <img src="IMG/flechita2.png" alt="Imagen 2" class="imagen" />
+      <button class="boton">Filtrar por fecha</button>
+    </section>
+    <section class="tareas-section">
+      <div>
+        <div class="texto-grande">
+          - Asegúrate de que el fertilizante se aplique de manera uniforme en
+          todo el campo para que las plantas reciban una nutrición equilibrada.
+        </div>
+        <div class="texto-grande">
+          - Fertilizantes Orgánicos: Usa compost o estiércol bien descompuesto
+          para mejorar la estructura del suelo.
+        </div>
+      </div>
+      <img src="IMG/Planta.png" alt="Imagen" class="planta" />
+      <div>
+        <div class="tareas-texto">Tareas diarias</div>
+        <button class="boton">Riego</button>
+        <button class="boton">Siembra</button>
+        <button class="boton">Fertilización</button>
+      </div>
+    </section>
+    <script>
+      // Load the navigation bar
+      fetch("menu.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar-container").innerHTML = data;
+          // Add event listeners for the menu toggle after loading
+          const menuToggle = document.getElementById("menuToggle");
+          const verticalMenu = document.getElementById("verticalMenu");
+
+          menuToggle.addEventListener("click", () => {
+            verticalMenu.style.display =
+              verticalMenu.style.display === "block" ? "none" : "block";
+          });
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
+    </script>
+  </body>
+</html>
