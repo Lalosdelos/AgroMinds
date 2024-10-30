@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AgroMinds Landing Page</title>
+    <link href="recursos.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <!--Menu-->
+    <div id="navbar-container"></div>
+    <!--Imagen Grande-->
+    <section class="adn-upc-section-recursos">
+      <div class="content-adn-recursos">
+        <a href="#" class="logo">
+          <img
+            height="60"
+            width="60"
+            src="IMG/Recursitos.png"
+            alt="AgroMinds Titulo"
+          />
+        </a>
+        <p class="subtitle">
+          ¡Accede a una variedad de recursos útiles para mejorar tu cultivo!
+        </p>
+      </div>
+    </section>
+    <section id="recommended-resources" class="recommended-section">
+      <hr class="section-line" />
+      <div class="section-header">
+        <h2>Recursos recomendados</h2>
+        <input
+          type="text"
+          placeholder="Nombre de Cultivo..."
+          class="search-bar"
+        />
+      </div>
+      <div class="images-container">
+        <div class="image-card">
+          <img src="IMG/semillas.png" alt="Recurso 1" />
+          <button>Semillas</button>
+        </div>
+        <div class="image-card">
+          <img src="IMG/fertilizantes.png" alt="Recurso 2" />
+          <button>Fertilizantes</button>
+        </div>
+        <div class="image-card">
+          <img src="IMG/insumos.png" alt="Recurso 3" />
+          <button>Insumos</button>
+        </div>
+      </div>
+    </section>
+    <script>
+      // Load the navigation bar
+      fetch("menu.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar-container").innerHTML = data;
+          // Add event listeners for the menu toggle after loading
+          const menuToggle = document.getElementById("menuToggle");
+          const verticalMenu = document.getElementById("verticalMenu");
+
+          menuToggle.addEventListener("click", () => {
+            verticalMenu.style.display =
+              verticalMenu.style.display === "block" ? "none" : "block";
+          });
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
+    </script>
+  </body>
+</html>
