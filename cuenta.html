@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML + CSS</title>
+    <link rel="stylesheet" href="cuenta.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sección de la imagen -->
+      <div class="image-section">
+        <img src="IMG/Inicio.png" alt="Imagen inicial" />
+      </div>
+
+      <!-- Sección del formulario -->
+      <div class="form-section">
+        <form>
+          <!-- Logo centrado arriba -->
+          <div class="logo">
+            <img src="IMG/logo.jpg" alt="Logo" />
+          </div>
+
+          <!-- Campos de usuario y contraseña -->
+          <label for="username">Ingresa tu nombre de usuario:</label>
+          <input type="text" id="username" name="username" required />
+
+          <label for="password">Contraseña:</label>
+          <input type="password" id="password" name="password" required />
+
+          <!-- Botón de inicio de sesión -->
+          <button type="button" onclick="login()">Iniciar Sesión</button>
+
+          <!-- Enlace para registrarse -->
+          <p class="register-link"><a href="#">Regístrate</a></p>
+
+          <!-- Línea divisoria decorativa -->
+          <div class="divider">
+            <span></span>
+            <p>o</p>
+            <span></span>
+          </div>
+
+          <!-- Botones para inicio de sesión con redes sociales -->
+          <button class="social-button facebook">
+            <img src="IMG/Facebook.png" alt="Facebook" class="icon" /> Iniciar
+            sesión con Facebook
+          </button>
+          <button class="social-button google">
+            <img src="IMG/Google.png" alt="Google" class="icon" /> Iniciar
+            sesión con Google
+          </button>
+        </form>
+      </div>
+    </div>
+    <script>
+      function login() {
+        // Obtener los valores de los campos de entrada
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // Credenciales básicas
+        const validUsername = "admin";
+        const validPassword = "admin";
+
+        // Validar credenciales
+        if (username === validUsername && password === validPassword) {
+          // Redirigir a servicios.html si las credenciales son correctas
+          window.location.href = "servicios.html";
+        } else {
+          // Mostrar un mensaje de error si las credenciales son incorrectas
+          alert("Credenciales incorrectas. Inténtalo de nuevo.");
+        }
+      }
+    </script>
+  </body>
+</html>
