@@ -56,23 +56,19 @@
     </div>
     <script>
       function login() {
-        // Obtener los valores de los campos de entrada
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
-        // Credenciales básicas
         const validUsername = "admin";
         const validPassword = "admin";
 
-        // Validar credenciales
         if (username === validUsername && password === validPassword) {
-          // Redirigir a servicios.html si las credenciales son correctas
           window.location.href = "servicios.html";
         } else {
-          // Mostrar un mensaje de error si las credenciales son incorrectas
           alert("Credenciales incorrectas. Inténtalo de nuevo.");
         }
       }
     </script>
   </body>
 </html>
+
