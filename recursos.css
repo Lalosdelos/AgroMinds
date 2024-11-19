@@ -2,7 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Hace que el tamaño de los elementos incluya padding y border */
+  box-sizing: border-box;
 }
 
 body {
@@ -13,42 +13,43 @@ body {
 
 /* Sección Adn-Upc */
 .adn-upc-section-recursos {
-  position: relative; /* Posicionamiento relativo para elementos hijos */
-  background-image: url("IMG/Recursitos.png"); /* Imagen de fondo */
-  background-size: cover; /* Cubre todo el área disponible */
-  background-position: center; /* Centra la imagen de fondo */
+  position: relative;
+  background-image: url("IMG/Recursitos.png");
+  background-size: cover;
+  background-position: center;
   height: 600px;
-  color: white; /* Color del texto */
-  display: flex; /* Flexbox para el contenido */
-  align-items: center; /* Alinea verticalmente el contenido */
+  color: white;
+  display: flex;
+  align-items: center;
 }
 
 .left-content {
   display: flex;
   align-items: center;
-  gap: 20px; /* Espacio entre los elementos */
-  position: absolute; /* Elemento posicionado absolutamente */
-  left: 20px; /* Posición desde la izquierda */
+  gap: 20px;
+  position: absolute;
+  left: 20px;
 }
 
 .content-adn-recursos {
   display: flex;
-  flex-direction: column; /* Organiza elementos en columna */
-  align-items: flex-start; /* Alinea al inicio */
-  margin-left: 150px; /* Margen a la izquierda */
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 150px;
 }
 
 .content-adn-recursos .logo img {
-  width: 800px; /* Ancho de la imagen */
-  height: 250px; /* Altura de la imagen */
+  width: 100%; /* Ajuste proporcional */
+  max-width: 800px;
+  height: auto;
 }
 
 .subtitle {
-  font-size: 1.5rem; /* Tamaño de fuente */
-  margin-top: 10px; /* Margen superior */
+  font-size: 1.5rem;
+  margin-top: 10px;
 }
 
-/* Seccion recomendaciones*/
+/* Sección recomendaciones */
 .recommended-section h2 {
   color: #3aad2c;
   font-size: 2rem;
@@ -84,6 +85,7 @@ body {
   display: flex;
   justify-content: space-around;
   gap: 20px;
+  flex-wrap: wrap; /* Ajuste de imágenes en filas */
   padding: 0 40px;
 }
 
@@ -91,7 +93,8 @@ body {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   text-align: center;
   padding: 20px;
 }
@@ -99,7 +102,7 @@ body {
 .image-card img {
   width: 100%;
   height: 180px;
-  object-fit: auto;
+  object-fit: cover;
   border-radius: 10px;
 }
 
@@ -115,117 +118,85 @@ body {
 }
 
 .image-card button:hover {
-  background-color: #3aad2c; /* Fondo verde al pasar el mouse */
-  color: white; /* Texto blanco al pasar el mouse */
+  background-color: #3aad2c;
+  color: white;
 }
 
-/* Menu Horizontal*/
-.topheader {
-  background-color: white;
-  display: flex;
-  align-items: center; /* Alinea verticalmente los elementos */
-  justify-content: space-between; /* Distribuye espacio entre los elementos */
-  padding: 0 20px;
-  height: 90px;
+/* Media Queries */
+@media (max-width: 768px) {
+  .adn-upc-section-recursos {
+    height: 400px; /* Reduce el alto en pantallas más pequeñas */
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content-adn-recursos {
+    margin-left: 20px; /* Reduce el margen */
+    align-items: center;
+  }
+
+  .content-adn-recursos .logo img {
+    max-width: 90%; /* Imagen más pequeña */
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .recommended-section h2 {
+    font-size: 1.5rem;
+    margin-left: 20px;
+  }
+
+  .section-header {
+    padding: 0 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .images-container {
+    padding: 0 20px;
+  }
 }
 
-.menu-horizontal {
-  list-style: none; /* Elimina los puntos de la lista */
-  display: flex; /* Muestra los elementos en línea */
-  gap: 40px; /* Espacio entre los elementos del menú */
-  margin: 0;
-  flex: 1; /* Ocupa el espacio disponible */
-  justify-content: center; /* Centrar el menú horizontal */
-}
+@media (max-width: 480px) {
+  .adn-upc-section-recursos {
+    height: 300px;
+    padding: 10px;
+  }
 
-.menu-horizontal li a {
-  font-weight: bold; /* Negrita para los enlaces */
-  color: black; /* Color del texto */
-  text-decoration: none; /* Elimina el subrayado */
-  font-size: 1.1rem; /* Tamaño de fuente */
-}
+  .subtitle {
+    font-size: 1rem;
+  }
 
-.menu-horizontal li a:hover {
-  color: green; /* Color al pasar el mouse */
-}
+  .recommended-section h2 {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
 
-/* Estilo del botón */
-.btn-form-insc {
-  background-color: #3aad2c; /* Color de fondo del botón */
-  color: white; /* Color del texto */
-  font-weight: bold; /* Negrita para el texto */
-  padding: 10px 20px; /* Espaciado interno */
-  border: none; /* Sin borde */
-  border-radius: 20px; /* Bordes redondeados */
-  cursor: pointer; /* Cambia el cursor al pasar el mouse */
-  margin-left: 10px; /* Margen a la izquierda */
-}
+  .section-header {
+    padding: 0 10px;
+  }
 
-.btn-form-insc:hover {
-  background-color: #3aad2c; /* Color de fondo al pasar el mouse */
-}
+  .images-container {
+    gap: 10px;
+  }
 
-/* Iconos */
-.lupa-icon,
-.opciones-icon {
-  cursor: pointer; /* Cambia el cursor al pasar el mouse */
-  margin: 0 50px; /* Margen lateral */
-}
-/* Menú vertical */
-nav {
-  position: relative; /* Asegura que el menú se posicione relativo a la barra de navegación */
-}
+  .image-card {
+    padding: 10px;
+    font-size: 0.8rem;
+  }
 
-.vertical-menu {
-  display: none; /* Ocultar el menú por defecto */
-  position: absolute; /* Posicionamiento absoluto */
-  top: 70px; /* Ajusta según sea necesario */
-  right: 0; /* Posiciona a la derecha */
-  background-color: white; /* Fondo del menú */
-  border: 1px solid #ccc; /* Borde del menú */
-  border-radius: 5px; /* Bordes redondeados */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
-  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
-}
+  .image-card img {
+    height: 120px;
+  }
 
-.vertical-menu ul {
-  list-style: none; /* Elimina los puntos de la lista */
-  padding: 0; /* Elimina el padding */
-  margin: 0; /* Elimina el margin */
-}
-
-.vertical-menu li {
-  padding: 10px 15px; /* Espaciado interno */
-}
-
-.vertical-menu li a {
-  text-decoration: none; /* Elimina el subrayado */
-  color: #333; /* Color del texto */
-  display: block; /* Hace que el área del enlace sea más grande */
-}
-
-.vertical-menu li a:hover {
-  background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
-}
-
-/* Estilo de las divisiones */
-.divider {
-  height: 1px; /* Altura de la línea */
-  background-color: green; /* Color de la línea */
-  margin: 0; /* Sin margen */
-}
-
-/* Botón para ingresar */
-.btn-form-insc {
-  margin-left: auto; /* Para alinear a la derecha */
-}
-
-/* Estilo para la imagen de opciones */
-.opciones-icon {
-  cursor: pointer; /* Cambia el cursor al pasar el mouse */
-}
-
-/* Muestra el menú al hacer clic en la imagen de opciones (ejemplo) */
-.opciones-icon:hover + .vertical-menu {
-  display: block; /* Muestra el menú al pasar el mouse */
+  .image-card button {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
 }

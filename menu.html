@@ -1,4 +1,3 @@
-<!-- navbar.html -->
 <nav class="topheader">
   <a href="#" class="logo">
     <img height="60" width="60" src="IMG/logo.jpg" alt="AgroMinds Logo" />
@@ -10,23 +9,24 @@
     <li><a href="clima.html">Clima</a></li>
     <li><a href="comunidad.html">Comunidad</a></li>
   </ul>
-  <img
-    src="IMG/lupa.jpg"
-    class="lupa-icon"
-    alt="Search Icon"
-    height="30"
-    width="30"
-  />
-  <a href="cuenta.html" class="btn-form-insc">Mi Perfil</a>
-  <img
-    src="IMG/opciones.jpg"
-    class="opciones-icon"
-    alt="Options Icon"
-    height="30"
-    width="30"
-    id="menuToggle"
-  />
-
+  <div class="icons">
+    <img
+      src="IMG/lupa.jpg"
+      class="lupa-icon"
+      alt="Search Icon"
+      height="30"
+      width="30"
+    />
+    <a href="cuenta.html" class="btn-form-insc">Mi Perfil</a>
+    <img
+      src="IMG/opciones.jpg"
+      class="opciones-icon"
+      alt="Options Icon"
+      height="30"
+      width="30"
+      id="menuToggle"
+    />
+  </div>
   <div class="vertical-menu" id="verticalMenu">
     <ul>
       <li><a href="clima.html">Clima Actual</a></li>
@@ -46,4 +46,141 @@
       <li><a href="index.html" id="logout">Cerrar Sesión</a></li>
     </ul>
   </div>
+
+  <style>
+    /* General */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    nav {
+      width: 100%;
+    }
+
+    .topheader {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      height: 90px;
+    }
+
+    .menu-horizontal {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      margin: 0;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .menu-horizontal li a {
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .menu-horizontal li a:hover {
+      color: green;
+    }
+
+    .btn-form-insc {
+      background-color: #4caf50;
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .btn-form-insc:hover {
+      background-color: #45a049;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .vertical-menu {
+      display: none;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .vertical-menu ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .vertical-menu li {
+      padding: 10px 15px;
+    }
+
+    .vertical-menu li a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+    }
+
+    .vertical-menu li a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .divider {
+      height: 1px;
+      background-color: green;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .menu-horizontal {
+        display: none;
+      }
+
+      .opciones-icon {
+        display: block;
+        cursor: pointer;
+      }
+
+      .vertical-menu {
+        display: none;
+      }
+
+      #menuToggle:checked + .vertical-menu {
+        display: block;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .topheader {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        height: auto;
+      }
+
+      .logo img {
+        margin-bottom: 10px;
+      }
+
+      .icons {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  </style>
 </nav>
