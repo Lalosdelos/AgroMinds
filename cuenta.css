@@ -13,31 +13,36 @@ html {
 
 .container {
   display: flex;
-  height: 100vh; /* Toma toda la altura de la ventana */
+  flex-wrap: wrap; /* Permite que las secciones se adapten */
+  height: 100vh;
 }
 
 .image-section {
-  flex: 1; /* Ocupa la mitad del espacio */
-  overflow: hidden; /* Evita el desbordamiento de la imagen */
-}
-
-.image-section img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
-}
-
-.form-section {
-  flex: 1; /* Ocupa la otra mitad del espacio */
-  background-color: white;
+  flex: 1; /* Toma la mitad del espacio en pantallas grandes */
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.image-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.form-section {
+  flex: 1; /* Toma la otra mitad del espacio */
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Añade espacio interno para pantallas pequeñas */
+}
+
 form {
-  width: 80%; /* Ajusta el ancho del formulario */
-  max-width: 300px;
+  width: 100%; /* Ajusta el ancho del formulario */
+  max-width: 400px; /* No permite que se expanda demasiado */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,32 +58,30 @@ label {
   margin-top: 10px;
   font-weight: bold;
 }
-/* Estilo de los cuadros de credenciasles*/
+
 input {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  border: 2px solid #ddd; /* Color del borde */
-  border-radius: 12px; /* Bordes redondeados */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  transition: box-shadow 0.3s; /* Transición para la sombra */
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
   font-size: 16px;
 }
 
 input:hover {
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
-  background-color: #3aad2c;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo del boton de Inicio de Sesión*/
 button {
   width: 100%;
   padding: 10px;
   margin-top: 20px;
   background-color: white;
-  color: black; /* Color del texto */
-  border: 2px solid #3aad2c; /* Color, grosor y estilo del borde */
-  border-radius: 12px; /* Bordes redondeados */
+  color: black;
+  border: 2px solid #3aad2c;
+  border-radius: 12px;
   cursor: pointer;
 }
 
@@ -86,7 +89,6 @@ button:hover {
   background-color: #3aad2c;
 }
 
-/* Estilo del enlace de registro */
 .register-link {
   margin-top: 15px;
 }
@@ -97,7 +99,6 @@ button:hover {
   cursor: pointer;
 }
 
-/* Línea divisoria decorativa */
 .divider {
   display: flex;
   align-items: center;
@@ -117,7 +118,6 @@ button:hover {
   font-weight: bold;
 }
 
-/* Estilos de los botones de redes sociales */
 .social-button {
   width: 100%;
   padding: 10px;
@@ -126,7 +126,6 @@ button:hover {
   align-items: center;
   justify-content: center;
   border: 1px solid #ddd;
-  border-radius: 4px;
   background-color: white;
   color: black;
   font-weight: bold;
@@ -140,9 +139,50 @@ button:hover {
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo de los íconos dentro de los botones */
 .icon {
   width: 20px;
   height: 20px;
   margin-right: 8px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
+  }
+
+  .image-section {
+    flex: none;
+    height: 40vh; /* Ajusta la altura de la imagen */
+  }
+
+  .form-section {
+    flex: none;
+    height: auto; /* Permite que el formulario se ajuste dinámicamente */
+    padding: 15px;
+  }
+
+  form {
+    width: 90%; /* Ocupa casi todo el ancho disponible */
+  }
+
+  .logo img {
+    width: 60px; /* Reduce el tamaño del logo */
+  }
+
+  button,
+  input {
+    font-size: 14px; /* Ajusta el tamaño del texto */
+  }
+}
+
+@media (max-width: 480px) {
+  .divider p {
+    font-size: 12px; /* Reduce el tamaño del texto del divisor */
+  }
+
+  button,
+  input {
+    font-size: 12px; /* Más pequeño para pantallas muy pequeñas */
+  }
 }
